@@ -3,6 +3,10 @@ import PageWrapper from "@/components/PageWrapper"
 import DexterHero from "./components/DexterHero"
 import DexterCapabilities from "./components/DexterCapabilities"
 import DexterSpecifications from "./components/DexterSpecifications"
+import Dexter1 from "./components/Dexter1"
+import Dexter_2 from "./components/Dexter_2"
+import Dexter_3 from "./components/Dexter_3"
+import Dexter_4 from "./components/Dexter_4"
 
 export const metadata: Metadata = {
   title: "DEXTER - Multi-Role Single Solution - Tsalla Aerospace",
@@ -13,9 +17,13 @@ export const metadata: Metadata = {
 export default function DexterPage() {
   return (
     <PageWrapper>
-      <DexterCapabilities />
       <DexterHero />
+       <DexterCapabilities />
       <DexterSpecifications />
+      <Dexter1 />
+      <Dexter_2/>
+      <Dexter_3/>
+      <Dexter_4/>
     </PageWrapper>
   )
 }

@@ -3,6 +3,9 @@ import PageWrapper from "@/components/PageWrapper"
 import FenixHero from "./components/FenixHero"
 import FenixCapabilities from "./components/FenixCapabilities"
 import FenixSpecifications from "./components/FenixSpecifications"
+import FenixFeatures from "./components/FenixFeatures"
+import FenixMission from "./components/FenixMission"
+
 
 export const metadata: Metadata = {
   title: "FENIX - Fast Entry Navigational Intrusion eXplorer - Tsalla Aerospace",
@@ -15,6 +18,8 @@ export default function FenixPage() {
       <FenixHero />
       <FenixCapabilities />
       <FenixSpecifications />
+      <FenixFeatures />
+      <FenixMission />
     </PageWrapper>
   )
 }

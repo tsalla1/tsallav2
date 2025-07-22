@@ -1,12 +1,13 @@
+"use client";
+
 import React from 'react';
 
-// Define the props interface for the reusable Feature component
+// Feature component
 interface FeatureProps {
   title: string;
   description: string;
 }
 
-// Reusable feature component with left alignment
 const Feature: React.FC<FeatureProps> = ({ title, description }) => (
   <div className="py-4 border-b border-gray-300">
     <h3 className="text-2xl sm:text-3xl font-medium text-black mb-1">{title}</h3>
@@ -14,24 +15,23 @@ const Feature: React.FC<FeatureProps> = ({ title, description }) => (
   </div>
 );
 
-export default function FenixSpecifications(): JSX.Element {
-  // The features array has been updated with the content from your image.
+export default function KeyFeaturesSection(): JSX.Element {
   const features: FeatureProps[] = [
     {
-      title: "GPS Denied Navigation",
-      description: "Operates confidently where GPS signals are lost or blocked, relying on intelligent sensors and systems to stay on course and complete tasks without interruption.",
+      title: "Vertical Take-Off & Landing",
+      description: "True VTOL freedom: launch from confined spaces and rough terrain with zero setup.",
     },
     {
-      title: "Semi Autonomous Mode",
-      description: "Operates with partial autonomy, executing complex actions on its own while staying responsive to live adjustments and mission updates.",
+      title: "Intelligent Autonomy",
+      description: "AI-driven navigation and decision-making for missions that adapt in real time.",
     },
     {
-      title: "P2P Autonomy",
-      description: "Moves intelligently from one point to another on its own, completing pre-set or dynamic routes with accuracy and minimal oversight.",
+      title: "Compact Heavy-Lift",
+      description: "Minimal form, maximum payload — engineered to move more with less.",
     },
     {
-      title: "Turtle Mode",
-      description: "Reorients itself autonomously when overturned, flipping back into launch position to keep operations moving smoothly without delays or manual resets.",
+      title: "Rapid Mission Ready",
+      description: "Always ready: deploy in minutes, operate with ease, recover with zero hassle.",
     },
   ];
 
@@ -45,7 +45,8 @@ export default function FenixSpecifications(): JSX.Element {
       `}</style>
 
       {/* The horizontal padding (px-*) has been increased to add more space on the left and right. */}
-      <section className="font-clash-grotesk bg-white w-full min-h-screen flex items-center py-20 px-12 sm:px-20 lg:px-32">
+     <section className="font-clash-grotesk bg-white w-full min-h-screen flex items-center py-20 px-12 sm:px-20 lg:px-32">
+
         <div className="w-full">
           {/* Header */}
           <div className="mb-12">

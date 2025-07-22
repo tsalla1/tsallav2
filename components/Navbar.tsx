@@ -20,7 +20,6 @@ const megaMenuData = {
         details: {
           headline: "DEXTER",
           subheadline: "Multirole Single Solution",
-          text: ["Uncompromised endurance.", "Effortless vertical launch.", "Elevated possibilities."],
           droneImage: "/drone-wireframe.png",
         },
       },
@@ -30,8 +29,7 @@ const megaMenuData = {
         description: "Fast Entry Navigational Intrusion eXplorer",
         details: {
           headline: "FENIX",
-          subheadline: "Fast Entry Navigational Intrusion eXplorer",
-          text: ["Rapid deployment.", "Stealth capabilities.", "Advanced reconnaissance."],
+          subheadline: "Fast Entry Navigational \nIntrusion eXplorer",
           droneImage: "https://cdn.sanity.io/images/z5s3oquj/production/6c9bf5d85318362ed027710dda593420eea26008-4000x2784.png?auto=format&fit=max&w=1920&q=90",
         },
       },
@@ -42,7 +40,6 @@ const megaMenuData = {
         details: {
           headline: "BAT",
           subheadline: "Battlefield Aerial Tactical UAS",
-          text: ["Tactical advantage.", "Robust design.", "Precision strike capabilities."],
           droneImage: "https://cdn.sanity.io/images/z5s3oquj/production/05de0ab91d5f6bf34bb54ea43258702f7582d963-1799x2000.png?auto=format&fit=max&w=1920&q=90",
         },
       },
@@ -53,7 +50,6 @@ const megaMenuData = {
         details: {
           headline: "STORM",
           subheadline: "Smart Transport Operations for Rugged Missions",
-          text: ["Heavy-lift capacity.", "Autonomous logistics.", "All-weather operation."],
           droneImage: "https://cdn.sanity.io/images/z5s3oquj/production/6c9bf5d85318362ed027710dda593420eea26008-4000x2784.png?auto=format&fit=max&w=1920&q=90",
         },
       },
@@ -320,21 +316,17 @@ export default function Navbar() {
                 )}
               >
                 {activeMegaMenu === "/uncrewedsystems" && <div className="absolute inset-0 bg-black opacity-30" />}
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex flex-col items-start justify-center h-full relative z-10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex flex-col items-start h-full relative z-10">
                   {activeMegaMenu === "/uncrewedsystems" && hoveredUncrewedSystemDetails ? (
                     <>
                       <h2 className="text-5xl font-bold leading-tight tracking-wide">
                         {hoveredUncrewedSystemDetails.headline}
                       </h2>
                       <p className="text-lg leading-relaxed mt-2 mb-6">{hoveredUncrewedSystemDetails.subheadline}</p>
-                      <ul className="space-y-2 text-lg mb-8">
-                        {hoveredUncrewedSystemDetails.text.map((line: string, i: number) => (
-                          <li key={i}>{line}</li>
-                        ))}
-                      </ul>
+                      
                       <Link
                         href={hoveredUncrewedSystemDetails.href || "#"}
-                        className="inline-block px-4 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors text-base"
+                        className="inline-block px-4 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors text-base mt-52"
                       >
                         Explore
                       </Link>

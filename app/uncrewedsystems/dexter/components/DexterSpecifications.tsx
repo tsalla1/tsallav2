@@ -1,48 +1,70 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import React from 'react';
 
-export default function DexterSpecifications() {
-  const specs = [
-    { label: "Maximum Range", value: "500 km" },
-    { label: "Flight Duration", value: "12 hours" },
-    { label: "Payload Capacity", value: "50 kg" },
-    { label: "Operating Altitude", value: "0-15,000 ft" },
-    { label: "Maximum Speed", value: "200 km/h" },
-    { label: "Communication Range", value: "100 km" },
-  ]
+// Define the props interface for the FeatureCard component for type safety.
+interface FeatureCardProps {
+  title: string;
+  children: React.ReactNode;
+}
 
+// Helper component for individual feature cards.
+// It now includes a top border to create the separator line as seen in the image.
+const FeatureCard: React.FC<FeatureCardProps> = ({ title, children }) => (
+  <div className="w-full sm:w-1/2 lg:w-1/4 px-5">
+    <div className="pt-6 border-t border-gray-300">
+      <h3 className="text-base font-medium mb-3 text-black tracking-tight">{title}</h3>
+      <p className="text-base text-gray-600 leading-relaxed">
+        {children}
+      </p>
+    </div>
+  </div>
+);
+
+// Main component that lays out the key features section.
+// The styles have been updated for a full-page layout and more accurate text sizes.
+export default function DexterSpecifications(): JSX.Element {
   return (
-    <div className="py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Specifications</h2>
-          <p className="text-xl text-gray-400">Engineered for performance and reliability in demanding environments</p>
-        </div>
+    <>
+      {/*
+        The link to the "Clash Grotesk" font is included here.
+        In a real-world application, this would typically be placed in the <head> of your main HTML file.
+      */}
+      <style jsx global>{`
+        @import url('https://fonts.cdnfonts.com/css/clash-grotesk');
+        .font-clash-grotesk {
+          font-family: 'Clash Grotesk', sans-serif;
+        }
+      `}</style>
+      <div className="font-clash-grotesk bg-white text-black antialiased flex items-center justify-center min-h-screen w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {specs.map((spec, index) => (
-            <Card key={index} className="bg-gray-900 border-gray-800">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-gray-400 text-sm font-medium">{spec.label}</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <p className="text-2xl font-bold text-white">{spec.value}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+          {/* Header Section */}
+          <div className="text-left max-w-4xl mb-20">
+            <h1 className="text-8xl font-medium tracking-tight mb-5">
+              Key Features
+            </h1>
+            <p className="text-xl text-gray-600">
+              Each feature unlocks new possibilities — precision, power, and performance built into every flight.
+            </p>
+          </div>
 
-        <div className="mt-12 text-center">
-          <Card className="bg-blue-900/20 border-blue-800 max-w-2xl mx-auto">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-white mb-4">Ready for Deployment</h3>
-              <p className="text-gray-300">
-                DEXTER represents the pinnacle of multi-role uncrewed system design, ready to adapt to any mission
-                requirement with unmatched reliability.
-              </p>
-            </CardContent>
-          </Card>
+          {/* Features Grid Section */}
+          <div className="flex flex-wrap -mx-5">
+            <FeatureCard title="Vertical Take-Off & Landing">
+              True VTOL freedom: launch from confined spaces and rough terrain with zero setup.
+            </FeatureCard>
+            <FeatureCard title="Intelligent Autonomy">
+              AI-driven navigation and decision-making for missions that adapt in real time.
+            </FeatureCard>
+            <FeatureCard title="Compact Heavy-Lift">
+              Minimal form, maximum payload — engineered to move more with less.
+            </FeatureCard>
+            <FeatureCard title="Rapid Mission Ready">
+              Always ready: deploy in minutes, operate with ease, recover with zero hassle.
+            </FeatureCard>
+          </div>
+
         </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }
